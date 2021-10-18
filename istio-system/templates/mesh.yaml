@@ -4,6 +4,7 @@ kind: Namespace
 metadata:
   labels:
     kubernetes.io/metadata.name: istio-system
+    topology.istio.io/network: {{.Values.networkName}}
   name: istio-system
 spec:
   finalizers:
@@ -20,4 +21,4 @@ spec:
       meshID: mesh1
       multiCluster:
         clusterName: {{.Values.clusterName}}
-      network: network1
+      network: {{.Values.networkName}}
